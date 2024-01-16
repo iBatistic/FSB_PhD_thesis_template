@@ -1,6 +1,8 @@
 # FSB PhD Thesis Template
 
-This LaTeX template is designed for writing a PhD thesis at Faculty of Mechanical Engineering and Naval Architecture. It provides a structured format for organizing your research work and adheres to the guidelines set by the university.
+This LaTeX template is designed for writing a PhD thesis at Faculty of Mechanical Engineering and Naval Architecture. It provides a structured format for organizing your research work and adheres to the [guidelines](https://www.unizg.hr/istrazivanje/doktorski-studiji/obrasci-dr-sc-dr-art/znanstvena-podrucja-dr-sc/) set by the university.
+
+An alternative version, provided by Professor Milan Vrdoljan, is available at the following link: https://github.com/aerodyn/fsbthesis/tree/master
 
 ## Disclaimer
 
@@ -13,8 +15,10 @@ To use this template, you need a LaTeX distribution installed on your system.
 More details regarding latex installation can be found on the [link](https://milq.github.io/install-latex-ubuntu-debian/).  
 The template is tested on Ubuntu 22.04.3 LTS distribution.  
 
-It is advisable to designate thesis.tex as the master document to facilitate compilation when working on other documents.   
+It is advisable to designate `thesis.tex` as the master document to facilitate compilation when working on other documents.   
 In Texmaker, you can achieve this by navigating to 'Options' and selecting 'Define Current Document as Master Document.  
+
+Note: for proper rendering of references, ensure that `BibTeX` is executed prior to initiating the `Quick Build` process.
 
 ## Structure 
 
