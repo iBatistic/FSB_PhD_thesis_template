@@ -23,7 +23,7 @@ The template is structured as follows:
 - **`figures`**: Place figures in this directory.
 - **`settings`**: The settings directory houses the document's configuration files. Within this directory:
   - **`Package.tex`**: Controls the packages used in the document.
-  - **`itlePage`**: Provides inputs for the title page.
+  - **`titlePage`**: Provides inputs for the title page.
   - **`customCommand.tex`**: A compilation of custom LaTeX commands.
 
 ## Acknowledgments
