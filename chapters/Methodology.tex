@@ -18,52 +18,69 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %
-The Falk--Langemeyer method solves the GEP for a symmetric
-and definite matrix pair $(A, B)$.  The method constructs a sequence of
-matrix pairs $(A^{(\ell)}, B^{(\ell)})$,
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+%
+\begin{algorithm}[H]
+\caption{Algorithm caption.}
+\label{alg:ct:force}
+\begin{algorithmic}[1] \footnotesize
+\If {integrated force is not within tolerance of targeted force $F_t$}
+\If {relative residual is below prescribed tolerance}
+\State {Integrate stress at boundary and calculate force $F^{(i)}$}
+\State {Calculate difference $\Delta F^{(i)} = F_t - F^{(i)}$}
+\State {Calculate derivative approximation $S=(F^{(i-1)}-F^{(i)})/(u^{(i)}-u^{(i-1)})$}
+\State {Calculate $u^{(i+1)} = u^{(i)} + \Delta F^{(i)}/ S$}
+\EndIf
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+%
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+%
 \begin{equation}
-  A_{}^{(\ell+1)} = C_{\ell}^T A_{}^{(\ell)} C_{\ell}^{}, \quad
-  B_{}^{(\ell+1)} = C_{\ell}^T B_{}^{(\ell)} C_{\ell}^{}, \quad \ell \in \mathbb{N},
-\label{2.1}
+\vec{u}_{bm}  = \frac{\vec{t}_{bm} - \vec{n}_{bm} \cdot \left[\mu_{bm} (\grad \vec{u})^{\transpose}_{bm}-(\mu_{bm}+\lambda_{bm})(\grad \vec{u})_{bm}\right] }{(2\mu_{bm}+\lambda_{bm})}
+\label{eq:startEqMaster}
 \end{equation}
-where $A^{(1)} \assgn A$, and $B^{(1)} \assgn B$, according to some pivot
-strategy that selects the order in which the off-diagonal elements are
-annihilated.
-If the transformation matrix $C_{\ell}$ is nonsingular, the two consecutive
-pairs are congruent, so their eigenvalues are equal.
-A matrix that diagonalizes the pair is computed by accumulating
-the transformations
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+%
 \begin{equation}
-  C^{(1)} = I, \qquad C^{(\ell+1)} = C^{(\ell)} C_{\ell}, \quad
-  \ell = 1, 2, \ldots.
-\label{2.2}
+\vec{a}_i =  \vec{n}_{bi} \cdot \left[(\mu_{bi}+\lambda_{bi})(\grad \vec{u})_{bi}^*-\mu_{bi} (\grad \vec{u})^{*,\transpose}_{bi}\right] - \vec{n}_{bi}\cdot \lambda_{bi} \tr ((\grad \vec{u})^*_{bi})  ,
+\label{eq:ic:A}
 \end{equation}
-The matrix $C_{\ell}$ resembles a scaled plane rotation: it is the identity
-matrix, except for its $(i, j)$-restriction $\widehat{C}_{\ell}$, where
-it has two parameters, $\alpha_{\ell}$ and $\beta_{\ell}$
+%
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+%
 \begin{equation}
-  \widehat{C}_{\ell} = \begin{bmatrix}
-    \hphantom{-}1 & \alpha_{\ell} \\
-    -\beta_{\ell}      & 1
-  \end{bmatrix}.
-\label{2.3}
+\begin{bmatrix}
+-9 & 3 & 0  \\
+3 & -6 & 3  \\
+0 & 3 & -3\\
+\end{bmatrix}
+\begin{bmatrix}
+u_0 \\ u_1 \\u_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+-u_{0,b}/\delta \\ 0 \\ -F_c
+\end{bmatrix},
+\label{eq:1dbarSoE}
 \end{equation}
-The parameters $\alpha_{\ell}$ and $\beta_{\ell}$ in~(\ref{2.3}) are
-determined so that the transformations in~(\ref{2.1}) diagonalize
-the pivot submatrices
-\begin{equation}
-  \widehat{A}^{(\ell)} =
-  \begin{bmatrix}
-    a_{ii}^{(\ell)} & a_{ij}^{(\ell)} \\[2pt]
-    a_{ij}^{(\ell)} & a_{jj}^{(\ell)}
-  \end{bmatrix}, \qquad
-  \widehat{B}^{(\ell)} =
-  \begin{bmatrix}
-    b_{ii}^{(\ell)} & b_{ij}^{(\ell)} \\[2pt]
-    b_{ij}^{(\ell)} & b_{jj}^{(\ell)}
-  \end{bmatrix}.
-\label{2.4}
-\end{equation}
+%
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %

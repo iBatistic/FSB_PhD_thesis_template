@@ -6,6 +6,9 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
+% Fooling acro package into thinking that all items in NomenclatureList and AbbrevationList are being used
+\acuseall
+%
 \begin{spacing}{1.3}
 %
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -32,12 +35,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 %
 % Subscripts
 %
-\printacronyms[name={\normalsize Subscripts},sort=true, include-classes=subscripts,]
+\printacronyms[name={\normalsize Subscripts},sort=true, include-classes=subscripts]
 %
 %
 % Operators
 %
-\printacronyms[name={\normalsize Other},sort=true, include-classes=other,]
+\printacronyms[name={\normalsize Other},sort=true, include-classes=other]
 %
 \end{spacing}
 %

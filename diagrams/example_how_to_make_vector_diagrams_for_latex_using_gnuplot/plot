@@ -1,0 +1,51 @@
+#!/bin/bash
+# Run from this directory
+cd ${0%/*} || exit 1
+
+# Plot function
+plot() {
+gnuplot -persist << EOF
+
+set terminal cairolatex pdf color \
+    size 14cm, 7.00cm \
+    linewidth 1 \
+    fontscale 0.2 
+
+set output "diag:beams.eps"
+set datafile separator " "
+
+set style line 1 linecolor rgb 'black' linetype 6 linewidth 1.5 ps 1
+set style line 2 linecolor rgb 'black' linetype 6 linewidth 1.5 ps 0.65
+set style line 3 linecolor rgb 'black' linetype 6 linewidth 1.5 ps 0.2
+
+set style line 5 linecolor rgb 'violet' dt 1 linetype 6 linewidth 2.75 ps 0.5 
+set style line 6 linecolor rgb 'brown' dt 1 linetype 6 linewidth 2.75 ps 0.5
+set style line 7 linecolor rgb 'green' dt 1 linetype 7 linewidth 2.75 ps 0.7
+set style line 8 linecolor rgb 'cyan' dt 1 linetype 9 linewidth 2.75 ps 0.7
+set style line 9 linecolor rgb 'gold' dt 1 linetype 7 linewidth 2.75 ps 0.7
+
+set border 3
+set tics nomirror
+set grid
+set key spacing 10
+set xrange [0:1]
+set yrange [-30:10]
+set key r b
+set key width 35 height 0.5 opaque
+
+set ytics 10 offset -1,0,0
+set xtics 0.2 offset 0,-2,0
+
+set xlabel "\$ \\\nrm{u}_x=u_x / u_{x,max} \\\quad [-]\$"  offset 0,-5,0
+set ylabel "Total reaction force \\\quad [\\\si{\\\newton}]" offset -12,0,0
+set xtics nomirror
+
+plot \
+     "data/solidForcesdisplacement.dat" u (\$1/31.5):(-\$2) w lp ls 1 pointinterval 2 title"upper beam",\
+     "data/neto-mu=0.0.txt" u (\$1/31.5):2 w lp ls 5 title"\\\cite{neto2016}",\
+     "data/areaiasEtAlmu=0.txt" u (\$1):2 w lp ls 6 title"\\\cite{areias2015}"
+
+EOF
+}
+
+plot;

@@ -4,7 +4,7 @@
 # exit on error
 set -e
 
-echo; echo "Cleaning *.log, *.lof, *.lot, *.toc, *.out, *.blg, *.aux, *.bbl, *.swp and *-converted-to.* files";
+echo; echo "Cleaning *.log, *.lof, *.lot, *.toc, *.out, *.blg, *.gz, *.aux, *.bbl, *.swp and *-converted-to.* files";
 
 find . -name "*.log" -type f -delete
 find . -name "*.lof" -type f -delete
@@ -14,5 +14,6 @@ find . -name "*.toc" -type f -delete
 find . -name "*.blg" -type f -delete
 find . -name "*.aux" -type f -delete
 find . -name "*.bbl" -type f -delete
+find . -name "*.gz" -type f -delete
 find . -name "*-converted-to.*" -type f -delete
 find . -name ".*.swp" -type f -delete

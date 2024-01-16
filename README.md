@@ -10,15 +10,27 @@ This template is unofficial and is not approved or endorsed by the Faculty of Me
 
 To use this template, you need a LaTeX distribution installed on your system.   
 
-More details regarding latex installation can be found on the [link](https://milq.github.io/install-latex-ubuntu-debian/).
-The template is tested on Ubuntu 22.04.3 LTS distribution.
+More details regarding latex installation can be found on the [link](https://milq.github.io/install-latex-ubuntu-debian/).  
+The template is tested on Ubuntu 22.04.3 LTS distribution.  
+
+It is advisable to designate thesis.tex as the master document to facilitate compilation when working on other documents.   
+In Texmaker, you can achieve this by navigating to 'Options' and selecting 'Define Current Document as Master Document.  
 
 ## Structure 
 
 The template is structured as follows:
 
-- **`bib`**: This directory contains the BibTeX file.
+- **`bib`**: This directory contains the `BibTeX` file.
 - **`chapters`**:  Each chapter's text is stored in separate files within this directory. The main file, `thesis.tex`, utilizes the include command to incorporate each chapter.
+  - In **`chapter/other`** you can find the `tex` document for the following:
+    - Abstract
+    - Biography
+    - Abbreviation list
+    - Nomenclature list
+    - Extended abstract in Croatian language
+    - Dedication
+    - Acknowledgements
+
 - **`diagrams`**: This directory is dedicated to storing diagrams.
 - **`figures`**: Place figures in this directory.
 - **`settings`**: The settings directory houses the document's configuration files. Within this directory:
