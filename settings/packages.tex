@@ -1,0 +1,113 @@
+%-------------------------------------------------------------------------------
+%                              Template defaults
+%-------------------------------------------------------------------------------
+%
+\usepackage{t1enc}
+\usepackage[utf8x]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{latexsym}
+\usepackage{stmaryrd}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{color}
+%\usepackage{parallel}
+%\usepackage{wasysym}
+\usepackage{epstopdf}
+\usepackage{paralist}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{arydshln}
+\usepackage{local}
+\usepackage[english]{babel}
+%
+%-------------------------------------------------------------------------------
+%                                  Added
+%-------------------------------------------------------------------------------
+
+% Bypas default Time New Roman
+\usepackage{lmodern}
+
+\usepackage{bm}
+\usepackage{float}  
+\usepackage{soul}
+\usepackage[colorlinks]{hyperref}
+\usepackage{nameref}
+\usepackage{cancel}
+\usepackage[labelfont={normal},figurename=Figure,labelsep=colon]{caption}
+\usepackage{arydshln}
+\usepackage{wrapfig}
+
+% Non italic greek letters
+% https://tex.stackexchange.com/questions/219975/how-to-get-non-italic-greek-symbols-with-ams-packages
+\usepackage{upgreek}
+
+% Loaded for the diameter symbol
+% https://tex.stackexchange.com/questions/551353/getting-errors-by-using-diameter-from-the-amssymb-package-in-an-equation
+\usepackage{wasysym}
+
+% Added for appendixes
+% https://tex.stackexchange.com/questions/49643/making-appendix-for-thesis
+\usepackage[toc,page]{appendix}
+
+% https://tex.stackexchange.com/questions/36880/insert-a-blank-page-after-current-page/36887
+% For adding a blank pages
+\usepackage{afterpage}  
+
+% For the nomeclature and abbrevation list
+\usepackage[version=2, singlelinecheck=false]{acro}
+
+% https://ctan.ijs.si/tex-archive/macros/latex/contrib/siunitx/siunitx.pdf
+% https://tex.stackexchange.com/questions/21936/differences-between-siunits-and-siunitx-packages
+% SI units old package
+%\usepackage[squaren]{SIunits}
+% SI units reimplementation
+%\usepackage[alsoload=abbr]{siunitx}
+\usepackage{siunitx}
+
+% Example:
+%\SI{10}{\metre}
+%\si{\kilogram\metre\per\second}
+
+% Added for todo notes [add disable to remove them]
+\usepackage[
+    linecolor=red,
+    bordercolor=red,
+    backgroundcolor=black!5!white,
+	colorinlistoftodos,
+    prependcaption,
+	textsize=footnotesize,
+	disable
+	]{todonotes}                   
+	
+%Example: todo{things to do...} or todo[inline]{things to do...}
+
+% Set width for notes
+\setlength{\marginparwidth}{2.5cm}		   
+
+%\usepackage{subfigure}
+\DeclareCaptionLabelFormat{opening}{#2)}
+
+\usepackage[font={footnotesize,normal},labelformat=opening]{subcaption}
+
+% https://texblog.org/2007/05/28/mulitple-reference-citation/
+% Combine multiple cite into one
+\usepackage{cite}
+
+% http://ctan.org/pkg/algorithms
+\usepackage{algorithm}
+
+% http://ctan.org/pkg/algorithmicx
+\usepackage{algpseudocode}        
+\captionsetup[algorithm]{labelfont=rm,labelsep=period}
+
+% https://tex.stackexchange.com/questions/141086/how-to-get-a-dot-instead-of-colon-in-table-captions
+\usepackage[labelsep=period]{caption}
+
+%https://tex.stackexchange.com/questions/55580/count-number-of-figures-tables-and-citations-in-report-z
+\usepackage[figure,table]{totalcount}
+
+%https://tex.stackexchange.com/questions/427444/align-table-caption-to-the-left-of-the-document
+\captionsetup[table]{skip=0pt,singlelinecheck=off}
+

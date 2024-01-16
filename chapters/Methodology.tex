@@ -1,0 +1,91 @@
+%_______________________________________________________________________________
+%
+\chapter{Methodology}
+\label{c:2} 
+%_______________________________________________________________________________
+%
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\section{Introduction}
+\label{sec:Metho:intro}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+The Falk--Langemeyer method solves the GEP for a symmetric
+and definite matrix pair $(A, B)$.  The method constructs a sequence of
+matrix pairs $(A^{(\ell)}, B^{(\ell)})$,
+\begin{equation}
+  A_{}^{(\ell+1)} = C_{\ell}^T A_{}^{(\ell)} C_{\ell}^{}, \quad
+  B_{}^{(\ell+1)} = C_{\ell}^T B_{}^{(\ell)} C_{\ell}^{}, \quad \ell \in \mathbb{N},
+\label{2.1}
+\end{equation}
+where $A^{(1)} \assgn A$, and $B^{(1)} \assgn B$, according to some pivot
+strategy that selects the order in which the off-diagonal elements are
+annihilated.
+If the transformation matrix $C_{\ell}$ is nonsingular, the two consecutive
+pairs are congruent, so their eigenvalues are equal.
+A matrix that diagonalizes the pair is computed by accumulating
+the transformations
+\begin{equation}
+  C^{(1)} = I, \qquad C^{(\ell+1)} = C^{(\ell)} C_{\ell}, \quad
+  \ell = 1, 2, \ldots.
+\label{2.2}
+\end{equation}
+The matrix $C_{\ell}$ resembles a scaled plane rotation: it is the identity
+matrix, except for its $(i, j)$-restriction $\widehat{C}_{\ell}$, where
+it has two parameters, $\alpha_{\ell}$ and $\beta_{\ell}$
+\begin{equation}
+  \widehat{C}_{\ell} = \begin{bmatrix}
+    \hphantom{-}1 & \alpha_{\ell} \\
+    -\beta_{\ell}      & 1
+  \end{bmatrix}.
+\label{2.3}
+\end{equation}
+The parameters $\alpha_{\ell}$ and $\beta_{\ell}$ in~(\ref{2.3}) are
+determined so that the transformations in~(\ref{2.1}) diagonalize
+the pivot submatrices
+\begin{equation}
+  \widehat{A}^{(\ell)} =
+  \begin{bmatrix}
+    a_{ii}^{(\ell)} & a_{ij}^{(\ell)} \\[2pt]
+    a_{ij}^{(\ell)} & a_{jj}^{(\ell)}
+  \end{bmatrix}, \qquad
+  \widehat{B}^{(\ell)} =
+  \begin{bmatrix}
+    b_{ii}^{(\ell)} & b_{ij}^{(\ell)} \\[2pt]
+    b_{ij}^{(\ell)} & b_{jj}^{(\ell)}
+  \end{bmatrix}.
+\label{2.4}
+\end{equation}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\section{Summary}
+\label{sec:Metho:closure}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+%
+%
+%===============================================================================
+%============================   E  N  D   ======================================
+%===============================================================================

@@ -1,0 +1,155 @@
+%%% If somebody wants to use arara library to generate pdf
+% arara: pdflatex
+% arara: bibtex
+% arara: pdflatex 
+% arara: pdflatex
+% arara: clean: { extensions: [ log, aux, toc, out, nav, snm ] }
+%% !(arara % && open %:r.pdf)
+
+\documentclass[oneside,a4paper,12pt,final]{bk}
+
+% Packages
+\input{settings/packages}
+
+% Abbrevation List
+\input{chapters/other/AbbrevationList}
+
+% Nomenclature List
+\input{chapters/other/NomenclatureList}
+
+% User defined commands
+\input{settings/customCommands}
+
+% Title page setup
+\input{settings/titlePage}
+
+\begin{document}
+\setlength{\pltopsep}{-8pt}
+\setlength{\plpartopsep}{-6pt}
+\setlength{\plitemsep}{-4pt}
+\setlength{\plparsep}{-3pt}
+\renewcommand{\arraycolsep}{3pt}
+\setlength\pltopsep{9pt}
+\setlength\plpartopsep{3pt}
+\setlength\plitemsep{5pt}
+\newbox\boxa
+\newbox\boxb
+\newbox\boxc
+\newbox\boxd
+\newcolumntype{I}{!{\vrule width 1pt}}
+\newlength\savedwidth
+\newcommand\whline{
+	\noalign
+	{
+		\global\savedwidth\arrayrulewidth
+		\global\arrayrulewidth 1pt
+	}
+  \hline
+  \noalign{\global\arrayrulewidth\savedwidth}
+}
+%
+%
+\pagenumbering{gobble}
+\pagestyle{headings}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\maketitle
+%
+\include {chapters/other/bibliographyData}
+%
+\include {chapters/other/Dedication}
+%
+\include {chapters/other/Acknowledgements}                
+%
+\include {chapters/other/Abstract}       
+%
+\include {chapters/other/ExtendedAbstract_cro}       
+%              
+%
+\pagenumbering{roman}
+%
+\tableofcontents
+%
+\listoffigures
+%
+\listoftables
+%
+\begingroup
+%\pagestyle{}
+\markboth{}{}
+\include {chapters/other/Nomenclature}       
+\endgroup
+%
+%\cleardoublepage %or \blankPage 
+%
+\pagenumbering{arabic}
+%
+%
+\newpage
+%
+%-----------------------------------------------------------------------------
+%                                   Introduction
+%-----------------------------------------------------------------------------
+%
+\include {chapters/Introduction} 
+%
+%-----------------------------------------------------------------------------
+%                                   Methodology
+%-----------------------------------------------------------------------------
+%
+\include {chapters/Methodology}
+%
+%-----------------------------------------------------------------------------
+%                                    Examples
+%-----------------------------------------------------------------------------
+%
+\include {chapters/Examples}
+%
+%
+%-----------------------------------------------------------------------------
+%                            Conclusions and Future Work
+%-----------------------------------------------------------------------------
+%
+\include {chapters/Conclusions}
+%
+%
+%-----------------------------------------------------------------------------
+%                                  Appendices
+%-----------------------------------------------------------------------------
+%
+\include {chapters/Appendices}
+%
+%-----------------------------------------------------------------------------
+%                                  References
+%-----------------------------------------------------------------------------
+%
+% \nocite{*}
+% \bibliography{preamble,num_anal}
+\bibliographystyle{ieeetr}
+%\bibliographystyle{IEEEtran}
+%
+\bibliography{bib/ref}
+%
+%\blankPage               
+%
+%-----------------------------------------------------------------------------
+%                               Abbreviations
+%-----------------------------------------------------------------------------
+%
+\include {chapters/other/Abbreviations}
+%
+%-----------------------------------------------------------------------------
+%                              Curriculum Vitae
+%-----------------------------------------------------------------------------
+%
+\include {chapters/other/CurriculumVitae}
+%
+%
+%-----------------------------------------------------------------------------
+%
+\end {document}
+%
+%=============================================================================
+%============================   E  N  D   ====================================
+%=============================================================================

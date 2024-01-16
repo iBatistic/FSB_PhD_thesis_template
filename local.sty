@@ -1,0 +1,109 @@
+%%%%% SingMath: extend Plain TeX \overrightarrow, \overleftarrow
+%%%%%           by using \shortrightarrow, \shortleftarrow.
+%%%%%
+\def\shortrightarrowfill{$\m@th\smash-\mkern-7mu%
+  \cleaders\hbox{$\mkern-2mu\smash-\mkern-2mu$}\hfill
+  \mkern-7mu\mathord\shortrightarrow$}
+
+\def\shortleftarrowfill{$\m@th\mathord\shortleftarrow\mkern-7mu%
+  \cleaders\hbox{$\mkern-2mu\smash-\mkern-2mu$}\hfill
+  \mkern-7mu\smash-$}
+
+\def\overshortrightarrow#1{\vbox{\m@th\ialign{##\crcr
+      \shortrightarrowfill\crcr\noalign{\kern0.5pt\nointerlineskip}
+      $\hfil\displaystyle{#1}\hfil$\crcr}}}
+
+\def\overshortleftarrow#1{\vbox{\m@th\ialign{##\crcr
+      \shortleftarrowfill\crcr\noalign{\kern0.5pt\nointerlineskip}
+      $\hfil\displaystyle{#1}\hfil$\crcr}}}
+
+\def\vecs#1{\overshortrightarrow{#1}}
+%
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\def\?{\mskip 1mu}
+
+\def\bm{\hskip-\arraycolsep}
+
+\def\VphA{\vphantom{\Big(}}
+\def\VphB{\vphantom{\Bboxrule}}
+\def\VphC{\vphantom{\bigg(}}
+\def\VphD{\vphantom{\big(}}
+
+\def\hpz{\hphantom{0}}
+\def\hpm{\hphantom{-}}
+
+\long\def\boxit#1{\color{Red}{\vbox{\hrule height1pt\hbox{%
+\vrule width1pt\vbox{\color{Black}{#1}}%
+\vrule width1pt}\hrule height1pt}}}
+%
+\newdimen\boxxsize
+\boxxsize=\hsize
+\advance\boxxsize-2cm
+%
+\long\def\boxtext#1{\hsize\boxxsize\noindent\strut #1\strut}
+%
+\long\def\pozadina#1{\vbox{\hbox{\vbox{\kern5pt%
+\hbox{\kern5pt\vbox{\boxtext{#1}}\kern5pt}\kern5pt}}}}
+%
+\long\def\naglasi#1{%
+\vspace*{6pt}%
+\noindent
+\null\hfill{\boxit{\pozadina{#1}}}\hfill\null\vspace*{6pt}}
+%
+\long\def\botnaglasi#1{%
+\vspace*{6pt}%
+\noindent
+\null\hfill{\boxit{\pozadina{#1}}}\hfill\null}
+%
+\long\def\topnaglasi#1{%
+\vspace*{-9pt}%
+\noindent
+\null\hfill{\boxit{\pozadina{#1}}}\hfill\null\vspace*{6pt}}
+%
+\long\def\fpozadina#1{\vbox{\hbox{{\vbox{\kern5pt%
+\hbox{\kern5pt\vbox{\hbox{#1}}\kern5pt}\kern5pt}}}}}
+%
+\long\def\fnaglasi#1{%
+\vspace*{6pt}%
+\noindent
+\null\hfill{\boxit{\fpozadina{#1}}}\null\hfill\vspace*{6pt}}
+%
+\long\def\fbotnaglasi#1{%
+\vspace*{6pt}%
+\noindent
+\null\hfill{\boxit{\fpozadina{#1}}}\null\hfill}
+%
+\long\def\ftopnaglasi#1{%
+\vspace*{-9pt}%
+\noindent
+\null\hfill{\boxit{\fpozadina{#1}}}\null\hfill\vspace*{6pt}}
+%
+\long\def\fmidnaglasi#1{%
+\vspace*{1pt}%
+\noindent
+\null\hfill{\boxit{\fpozadina{#1}}}\null\hfill\vspace*{3pt}}
+
+\newcommand\atp[2]{\genfrac{}{}{0pt}{1}{#1}{#2}}
+
+\def\tdots{\mathinner{\mkern1mu\raise1pt\vbox{\kern7pt\hbox{.}}\mkern2mu
+           \raise4pt\hbox{.}\mkern2mu\raise7pt\hbox{.}\mkern1mu}}
+
+\def\hordots{\leaders\hbox{$\m@th \mkern 3mu . \mkern 3mu$}\hfill}
+
+\newenvironment{sol}[1][\solname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{.}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\providecommand{\solname}{Rje\v{s}enje}

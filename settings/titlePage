@@ -1,0 +1,16 @@
+%-------------------------------------------------------------------------------
+%
+\long\def\institution{Sveu\v{c}ili\v{s}te u Zagrebu \\[8pt] Fakultet strojarstva i brodogradnje}
+\long\def\eninstitution{University of Zagreb \\[8pt] Faculty of Mechanical Engineering and Naval Architecture}
+\long\def\supervisor{prof.\ dr.\ sc.\ Name Surname}
+\long\def\ensupervisor{Prof.\ Name Surname, PhD}
+\long\def\place{Zagreb, 2032.}
+\long\def\enplace{Zagreb, 2032}
+\author{Name Surname}
+\title{Ra\v{c}unalno modeliranje interakcije fluida i deformabilnog tijela}
+\long\def\entitle{Computational Modeling of Fluid-Structure Interaction}
+%
+%===============================================================================
+%============================   E  N  D   ======================================
+%=============================================================================== 
+

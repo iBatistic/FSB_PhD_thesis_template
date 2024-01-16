@@ -1,0 +1,187 @@
+%-----------------------------------------------------------------------------
+%                              Template defaults
+%-----------------------------------------------------------------------------
+
+\DeclareMathOperator{\fl}{\it fl}
+\DeclareMathOperator{\fix}{\it fi}
+\DeclareMathOperator{\sh}{\rm sh}
+\DeclareMathOperator{\ch}{\rm ch}
+\DeclareMathOperator{\tgh}{\rm th}
+\DeclareMathOperator{\cth}{\rm cth}
+\DeclareMathOperator{\arctg}{\rm arctg}
+\DeclareMathOperator{\ctg}{\rm ctg}
+\DeclareMathOperator{\tg}{\rm tan}
+\DeclareMathOperator{\atg}{\rm arctan}
+\DeclareMathOperator{\abs}{\rm abs}
+
+\newtheoremstyle{conc}%
+  {5pt}{5pt}{\itshape}{0pt}{\bfseries}{.}{ }{}%
+\theoremstyle{conc}
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{theorem}[thm]{Theorem}
+\newtheorem{corollary}[thm]{Corollary}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{proposition}[thm]{Proposition}
+%\theoremstyle{definition}
+\newtheorem{definitionf}[thm]{Definition}
+%%
+%\theoremstyle{nap}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{exmample}[thm]{Example}
+%\newtheorem{algorithm}[thm]{Algorithm} % This was making problems, removed
+\newtheoremstyle{nap}%
+  {5pt}{5pt}{\normalfont}{0pt}{\bfseries}{.}{ }{}%
+\theoremstyle{nap}
+\def\proofname{Proof}
+\renewcommand{\thethm}{\thechapter\arabic{thm}}
+
+\newcommand{\D}{{\rm D}}
+\newcommand{\dd}{{\rm d}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\sgn}{\operatorname{sign}}
+\newcommand{\assgn}{\ensuremath\mathrel{\mathop:}=}
+\newcommand{\fma}{{\rm fma}}
+\newcommand{\acc}{{\it acc\/}}
+\newcommand{\maxcyc}{{\it max\_sw\/}}
+
+%-----------------------------------------------------------------------------
+%                                Added 
+%-----------------------------------------------------------------------------
+
+% This will not allow latex to extend text over all page empty space
+% https://tex.stackexchange.com/questions/6081/reduce-space-between-enumerated-items
+\raggedbottom
+
+% Graphic path
+\graphicspath
+{
+	{figures/logos/}
+    {figures/appendix/}
+    {figures/}
+    {diagrams/}
+}
+
+% Added colors
+\definecolor{OliveGreen}{cmyk}{1,0.4,0.2,0.1}
+\definecolor{Plum}{cmyk}{0,0.514,0.063,0.443}
+\colorlet{correctionColor}{gray!20}
+
+% Empty page
+\newcommand\blankpage
+{
+    \null
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \newpage
+}
+
+% More compact form of the above command
+\newcommand\blankPage
+{
+    \afterpage{\blankpage}
+}
+
+% Add dot if you want color of the rest of the text
+% https://tex.stackexchange.com/questions/343564/how-to-change-color-of-hyperref
+% https://tex.stackexchange.com/questions/50747/options-for-appearance-of-links-in-hyperref
+\hypersetup
+{
+     colorlinks=true,
+     linkcolor=black,
+     filecolor=black,
+     citecolor = black,      
+     urlcolor=black,
+}
+
+
+% To-do list commands
+% https://tex.stackexchange.com/questions/9796/how-to-add-todo-notes
+\usepackage{xargs} 
+\newcommandx{\improve}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+
+% Final check before print, used for manually set values
+\newcommandx{\manualEntry}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,nolist,bordercolor=red,#1]{manual link}}
+
+% For bmatrix - make larger space between rows
+\renewcommand\arraystretch{1.25}
+
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\ten}[1]  {\boldsymbol{\mathbf{#1}}}
+\newcommand{\dif}{\text{d}}
+\newcommand{\grad}{\bm{\nabla}}
+\newcommand{\tr}{\text{tr}}
+\newcommand{\transpose}{\mathrm{T}}
+\newcommand{\sign}{\mathrm{sign}}
+\newcommand{\gvar}{\vec{\phi}}
+\newcommand{\nrm}[1]{\tilde{#1}}
+
+% https://tex.stackexchange.com/questions/13843/vertical-spacing-with-underbrace-command
+% Vertical spacing with underbrace command
+\newcommand*\mystrut[1]{\vrule width0pt height0pt depth#1\relax}
+
+%https://tex.stackexchange.com/questions/292071/cannot-define-new-unit-with-siunitx
+\sisetup{inter-unit-product=\mathord{\cdot}}
+\DeclareSIUnit{\m}{\metre}
+\DeclareSIUnit{\s}{\second}
+\DeclareSIUnit{\mm}{\metre\metre}
+\DeclareSIUnit{\nmm}{\newton\mm} 
+\DeclareSIUnit{\mpa}{\mega\pascal}
+\DeclareSIUnit{\gpa}{\giga\pascal}
+
+%https://tex.stackexchange.com/questions/476718/how-to-highlight-text-containing-citation-and-figure-referencing
+\sethlcolor{correctionColor}
+
+% Larger brackets
+%https://tex.stackexchange.com/questions/6794/about-big-parenthesis-larger-than-bigg
+\makeatletter
+\newcommand{\vast}{\bBigg@{4}}
+\newcommand{\Vast}{\bBigg@{5}}
+\makeatother
+
+\newcommand\implicitCellColor{\cellcolor{blue!50}}
+
+\newcommand\implicitCellColorTikz[1]{\tikz[overlay, remember picture,baseline=-\the\dimexpr\fontdimen22\textfont2\relax]\node[rectangle,fill=blue!50,sharp corners,fill opacity = 0.2,text opacity =1] {$#1$};} 
+
+% TIKZ library
+\usepackage{tikz}
+\usetikzlibrary{mindmap,trees}
+
+%https://tex.stackexchange.com/questions/267803/horizontal-and-vertical-spacing-in-itemize-environment
+\usepackage{enumitem}
+
+% Regular (normal) cdot for multiplication
+% Solution inspired by https://tex.stackexchange.com/questions/332146/a-canonical-or-robust-white-space-thinner-than
+\newcommand{\normalcdot}{\mathbin{ \mskip0.1\thinmuskip \cdotp}}
+
+
+% Larger cdot
+%https://latex.org/forum/viewtopic.php?t=10411
+ \renewcommand{\cdot}{\mathbin{\vcenter{\hbox{\scalebox{0.5}{$\bullet$}}}}}
+
+% https://tex.stackexchange.com/questions/147355/how-to-type-tensor-multiplication-with-vertical-dots
+\def\cddot{% two dots stacked vertically
+  \mathbin{\vcenter{\baselineskip.67ex
+    \hbox{$\mathsurround0pt\cdot$}\hbox{$\mathsurround0pt\cdot$}}%
+  }}%
+  
+% https://tex.stackexchange.com/questions/33487/skip-to-absolute-position-on-line
+\usepackage{tabto}
+
+%http://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907092
+\usepackage{setspace}
+
+% Hyphen 
+% https://tex.stackexchange.com/questions/31091/space-after-latex-commands
+\usepackage{xspace}
+\newcommand{\hyp}{---\xspace}
+% Alternatives
+% -- = \textendash  
+% --- = \textemdash
+% \rule[.5ex]{4em}{0.5pt} 
+
+% Making references to sections without trailing dot :)
+%https://tex.stackexchange.com/questions/168832/using-hypertarget-caption-in-hyperlink-caption
+\newcommand{\hlink}[2]{\hyperref[#1]{#2}\manualEntry{}}
+
+\newcommand{\hlc}[1]{{\sethlcolor{correctionColor}\hl{#1}}}

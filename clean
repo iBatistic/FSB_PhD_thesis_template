@@ -1,0 +1,18 @@
+#!/bin/bash
+# Script checked with https://www.shellcheck.net/#
+
+# exit on error
+set -e
+
+echo; echo "Cleaning *.log, *.lof, *.lot, *.toc, *.out, *.blg, *.aux, *.bbl, *.swp and *-converted-to.* files";
+
+find . -name "*.log" -type f -delete
+find . -name "*.lof" -type f -delete
+find . -name "*.lot" -type f -delete
+find . -name "*.out" -type f -delete
+find . -name "*.toc" -type f -delete
+find . -name "*.blg" -type f -delete
+find . -name "*.aux" -type f -delete
+find . -name "*.bbl" -type f -delete
+find . -name "*-converted-to.*" -type f -delete
+find . -name ".*.swp" -type f -delete
