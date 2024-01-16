@@ -15,14 +15,9 @@ set output "diag:beams.eps"
 set datafile separator " "
 
 set style line 1 linecolor rgb 'black' linetype 6 linewidth 1.5 ps 1
-set style line 2 linecolor rgb 'black' linetype 6 linewidth 1.5 ps 0.65
-set style line 3 linecolor rgb 'black' linetype 6 linewidth 1.5 ps 0.2
+set style line 2 linecolor rgb 'brown' dt 1 linetype 6 linewidth 2.75 ps 0.5
+set style line 3 linecolor rgb 'cyan' dt 1 linetype 9 linewidth 2.75 ps 0.7
 
-set style line 5 linecolor rgb 'violet' dt 1 linetype 6 linewidth 2.75 ps 0.5 
-set style line 6 linecolor rgb 'brown' dt 1 linetype 6 linewidth 2.75 ps 0.5
-set style line 7 linecolor rgb 'green' dt 1 linetype 7 linewidth 2.75 ps 0.7
-set style line 8 linecolor rgb 'cyan' dt 1 linetype 9 linewidth 2.75 ps 0.7
-set style line 9 linecolor rgb 'gold' dt 1 linetype 7 linewidth 2.75 ps 0.7
 
 set border 3
 set tics nomirror
@@ -42,8 +37,8 @@ set xtics nomirror
 
 plot \
      "data/solidForcesdisplacement.dat" u (\$1/31.5):(-\$2) w lp ls 1 pointinterval 2 title"upper beam",\
-     "data/neto-mu=0.0.txt" u (\$1/31.5):2 w lp ls 5 title"\\\cite{neto2016}",\
-     "data/areaiasEtAlmu=0.txt" u (\$1):2 w lp ls 6 title"\\\cite{areias2015}"
+     "data/neto-mu=0.0.txt" u (\$1/31.5):2 w lp ls 2 title"\\\cite{neto2016}",\
+     "data/areaiasEtAlmu=0.txt" u (\$1):2 w lp ls 3 title"\\\cite{areias2015}"
 
 EOF
 }
